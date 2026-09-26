@@ -650,5 +650,97 @@ Local • Friendly • Convenient 💜
 
 </footer>
 
+<!-- MANAGER BUTTON -->
+
+<button id="managerBtn" onclick="showLogin()" style="
+position:fixed;
+top:20px;
+right:20px;
+z-index:9999;
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:#ff18d1;
+color:white;
+font-weight:bold;
+cursor:pointer;">
+Manager
+</button>
+
+<!-- LOGIN -->
+
+<div id="loginBox" style="
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#11111b;
+padding:25px;
+border:1px solid #444;
+border-radius:15px;
+z-index:10000;
+width:300px;">
+
+<h3 style="margin-bottom:15px;">Manager Login</h3>
+
+<input id="username" type="text" placeholder="Username" style="
+width:100%;
+padding:10px;
+margin-bottom:10px;
+border-radius:8px;
+border:none;">
+
+<input id="password" type="password" placeholder="Password" style="
+width:100%;
+padding:10px;
+margin-bottom:10px;
+border-radius:8px;
+border:none;">
+
+<button onclick="login()" style="
+width:100%;
+padding:10px;
+background:#23dfff;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;">
+Login
+</button>
+
+</div>
+
+<script>
+
+function showLogin() {
+    document.getElementById('loginBox').style.display = 'block';
+}
+
+function login() {
+
+    const user =
+    document.getElementById('username').value;
+
+    const pass =
+    document.getElementById('password').value;
+
+    if(user === "manager" && pass === "shop123") {
+
+        document.body.contentEditable = true;
+
+        document.getElementById('loginBox').style.display = 'none';
+
+        alert("Manager Mode Enabled!");
+
+    } else {
+
+        alert("Incorrect Username or Password");
+
+    }
+}
+
+</script>
+
 </body>
 </html>
