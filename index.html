@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Family Shopper Lucknow</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050509;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 18px 6%;
+    background: rgba(5,5,9,0.95);
+    border-bottom: 1px solid #292936;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #20dfff;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff20d4;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero:before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(
+        circle,
+        rgba(255,0,210,0.2),
+        transparent 70%
+    );
+}
+
+.hero > * {
+    position: relative;
+}
+
+.small-title {
+    color: #25dfff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 9vw, 90px);
+    line-height: 0.95;
+    text-transform: uppercase;
+    text-shadow: 0 0 25px #ff18d4;
+}
+
+.hero h1 span {
+    display: block;
+    color: #23dfff;
+}
+
+.hero p {
+    margin-top: 25px;
+    color: #ccc;
+    font-size: 19px;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 30px;
+    margin: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #ff28d4;
+}
+
+.button.primary {
+    color: #050509;
+    border: none;
+    background: linear-gradient(
+        90deg,
+        #ff18d1,
+        #23dfff
+    );
+}
+
+/* HOURS */
+
+.hours {
+    margin-top: 30px;
+    padding: 20px 30px;
+    background: #0d0d15;
+    border: 1px solid #30303d;
+    border-radius: 18px;
+}
+
+.hours strong {
+    color: #ff31d5;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 80px 6%;
+}
+
+.dark-section {
+    background: #080811;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 42px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid #30303d;
+    background: linear-gradient(
+        145deg,
+        #11111b,
+        #08080e
+    );
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 36px;
+    color: #23dfff;
+    font-weight: 900;
+}
+
+/* PRODUCTS */
+
+.products {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.product {
+    text-align: center;
+    padding: 28px 15px;
+    background: #0e0e17;
+    border: 1px solid #2b2b38;
+    border-radius: 16px;
+    font-weight: bold;
+}
+
+.product-icon {
+    display: block;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+/* REVIEWS */
+
+.review {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 50px;
+    align-items: center;
+    background:
+        radial-gradient(
+            circle at 70%,
+            rgba(33,214,255,0.08),
+            transparent 35%
+        ),
+        #06060b;
+}
+
+.review h2 {
+    font-size: 42px;
+}
+
+.stars {
+    color: #ffd21f;
+    font-size: 43px;
+    letter-spacing: 4px;
+    margin: 15px 0;
+}
+
+.qr {
+    background: white;
+    padding: 18px;
+    border-radius: 18px;
+    text-align: center;
+    color: black;
+}
+
+.qr img {
+    width: 100%;
+    display: block;
+}
+
+/* CONTACT */
+
+.contact {
+    display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
+    gap: 20px;
+}
+
+.contact .card {
+    text-align: center;
+}
+
+.icon {
+    font-size: 35px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 25px 6%;
+    border-top: 1px solid #222;
+    color: #888;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .review,
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+👑 FAMILY SHOPPER <span>LUCKNOW</span>
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#offers">Offers</a>
+<a href="#products">Products</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<div class="small-title">
+YOUR LOCAL CONVENIENCE STORE
+</div>
+
+<h1>
+Family Shopper
+<span>Lucknow</span>
+</h1>
+
+<p>
+Great products. Friendly service. Local convenience.
+</p>
+
+<div class="buttons">
+
+<a class="button primary" href="#offers">
+See Our Offers
+</a>
+
+<a class="button" href="#reviews">
+Leave a Review ⭐
+</a>
+
+</div>
+
+<div class="hours">
+
+<strong>OPENING HOURS</strong>
+
+<br><br>
+
+Monday – Saturday:
+8:00am – 8:00pm
+
+<br>
+
+Sunday:
+8:00am – 6:00pm
+
+</div>
+
+</section>
+
+
+<!-- OFFERS -->
+
+<section id="offers">
+
+<div class="section-title">
+
+<div class="small-title">
+HOT DEALS
+</div>
+
+<h2>
+Today's Offers
+</h2>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+Selected Soft Drinks
+</h3>
+
+<div class="price">
+2 for £1
+</div>
+
+<p>
+Ask in store for the latest selection.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Crisps 6 Packs
+</h3>
+
+<div class="price">
+£1.49
+</div>
+
+<p>
+Ready Salted, Cheese & Onion and Variety.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+More Great Offers
+</h3>
+
+<div class="price">
+IN STORE
+</div>
+
+<p>
+Visit us for our latest deals.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section class="dark-section" id="products">
+
+<div class="section-title">
+
+<div class="small-title">
+SHOP LOCAL
+</div>
+
+<h2>
+What We Stock
+</h2>
+
+</div>
+
+<div class="products">
+
+<div class="product">
+<span class="product-icon">🥤</span>
+Soft Drinks
+</div>
+
+<div class="product">
+<span class="product-icon">🛒</span>
+Groceries
+</div>
+
+<div class="product">
+<span class="product-icon">🍫</span>
+Confectionery
+</div>
+
+<div class="product">
+<span class="product-icon">🍦</span>
+Ice Cream
+</div>
+
+<div class="product">
+<span class="product-icon">🥨</span>
+Snacks
+</div>
+
+<div class="product">
+<span class="product-icon">🥪</span>
+Everyday Essentials
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section class="review" id="reviews">
+
+<div>
+
+<div class="small-title">
+WE'D LOVE YOUR FEEDBACK
+</div>
+
+<h2>
+Enjoyed your visit?
+</h2>
+
+<p>
+Scan the QR code or tap the button below
+to leave us a review.
+</p>
+
+<div class="stars">
+★★★★★
+</div>
+
+<a
+class="button primary"
+href="https://www.google.com/"
+target="_blank">
+Leave a Review
+</a>
+
+</div>
+
+
+<div class="qr">
+
+<img
+src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https%3A%2F%2Fwww.google.com%2F"
+alt="Review QR Code">
+
+<br>
+
+<strong>
+Scan to review
+</strong>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="section-title">
+
+<div class="small-title">
+COME AND SEE US
+</div>
+
+<h2>
+Contact Us
+</h2>
+
+</div>
+
+
+<div class="contact">
+
+<div class="card">
+
+<div class="icon">
+📍
+</div>
+
+<h3>
+Address
+</h3>
+
+<p>
+Add your shop address here
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+📞
+</div>
+
+<h3>
+Phone
+</h3>
+
+<p>
+Add your phone number here
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+✉️
+</div>
+
+<h3>
+Email
+</h3>
+
+<p>
+Add your email here
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div>
+© 2026 Family Shopper Lucknow
+</div>
+
+<div>
+Local • Friendly • Convenient 💜
+</div>
+
+</footer>
+
+</body>
+</html>
